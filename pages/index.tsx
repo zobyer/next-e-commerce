@@ -1,83 +1,39 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
+import Banner from "../components/home/banner"
+import Offerings from "../components/home/offerings"
 import NavBar from "../components/navbar"
 import TopBar from "../components/topbar"
+import OfferingsData from "../interfaces/offerings-props"
+
+const allOfferings: OfferingsData[] = [
+  {
+    imageUrl: "delivery-van.svg",
+    name: "Free Shipping",
+    description: "Order over $200",
+  },
+
+  {
+    imageUrl: "money-back.svg",
+    name: "Money Rturns",
+    description: "30 days money returs",
+  },
+
+  {
+    imageUrl: "service-hours.svg",
+    name: "24/7 Support",
+    description: "Customer support",
+  },
+]
+
 const Home: NextPage = () => {
   return (
     <div>
       <TopBar />
       <NavBar />
-
-      <div
-        className="bg-cover bg-no-repeat bg-center py-36"
-        style={{ backgroundImage: "url('images/banner-bg.jpg')" }}
-      >
-        <div className="container">
-          <h1 className="text-6xl text-gray-800 font-medium mb-4 capitalize">
-            best collection for <br /> home decoration
-          </h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam{" "}
-            <br />
-            accusantium perspiciatis, sapiente magni eos dolorum ex quos dolores
-            odio
-          </p>
-          <div className="mt-12">
-            <a
-              href="#"
-              className="bg-primary border border-primary text-white px-8 py-3 font-medium 
-                    rounded-md hover:bg-transparent hover:text-primary"
-            >
-              Shop Now
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="container py-16">
-        <div className="w-10/12 grid grid-cols-3 gap-6 mx-auto justify-center">
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-            <Image
-              src="/images/icons/delivery-van.svg"
-              alt="Delivery"
-              className="w-12 h-12 object-contain"
-              width={48}
-              height={48}
-            />
-            <div>
-              <h4 className="font-medium capitalize text-lg">Free Shipping</h4>
-              <p className="text-gray-500 text-sm">Order over $200</p>
-            </div>
-          </div>
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-            <Image
-              src="/images/icons/money-back.svg"
-              alt="Delivery"
-              className="w-12 h-12 object-contain"
-              width={48}
-              height={48}
-            />
-            <div>
-              <h4 className="font-medium capitalize text-lg">Money Rturns</h4>
-              <p className="text-gray-500 text-sm">30 days money returs</p>
-            </div>
-          </div>
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
-            <Image
-              src="/images/icons/service-hours.svg"
-              alt="Delivery"
-              className="w-12 h-12 object-contain"
-              width={48}
-              height={48}
-            />
-            <div>
-              <h4 className="font-medium capitalize text-lg">24/7 Support</h4>
-              <p className="text-gray-500 text-sm">Customer support</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Banner />
+      <Offerings offering={allOfferings} />
 
       <div className="container py-16">
         <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">
