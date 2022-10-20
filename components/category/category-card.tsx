@@ -13,9 +13,9 @@ function CategoryCard(categoryCardProps: CategoryCardProps) {
         shop by category
       </h2>
       <div className="grid grid-cols-3 gap-3">
-        {categoryCardProps.allCategories.map((category) => {
+        {categoryCardProps.allCategories.map((category, i) => {
           return (
-            <div className="relative rounded-sm overflow-hidden group">
+            <div className="relative rounded-sm overflow-hidden group" key={i}>
               <Image
                 src={`/images/category/${category.imageUrl}`}
                 alt="category 1"

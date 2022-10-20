@@ -14,8 +14,8 @@ function ProductCardHolder(productCardHolderProps: ProductCardHolderProps) {
         {productCardHolderProps.heading}
       </h2>
       <div className="grid grid-cols-4 gap-6">
-        {productCardHolderProps.allProducts.map((product) => {
-          return <ProductCard product={product} />
+        {productCardHolderProps.allProducts.map((product, i) => {
+          return <ProductCard product={product} key={i} />
         })}
       </div>
     </div>
